@@ -44,7 +44,12 @@ public class Move extends Piece
 
     public int[] getNewPosition()
     {
-        return this.new_position;
+        int[] returned = new int[2];
+        for(int i = 0; i < 2; i++)
+        {
+            returned[i] = this.new_position[i];
+        }
+        return new_position;
     }
 
     public Move getPrevMove()
@@ -52,9 +57,14 @@ public class Move extends Piece
         return this.prev_move;      // de même ici, on retourne les pointeurs, pas une copie de l'objet
     }
 
-    public getNextMove()
+    public Move getNextMove()
     {
         return this.next_move;
+    }
+
+    public void setNextMove(Move next_move)
+    {
+        this.next_move = next_move;     // pas de copie d'objet ici, seulement le pointeur
     }
 
 }
