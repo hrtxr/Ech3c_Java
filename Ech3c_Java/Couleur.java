@@ -12,6 +12,12 @@ public class Couleur extends Joueur
         this.color = new String(color);
     }
 
+    public Couleur(String color, String player_name)
+    {
+        super(player_name);
+        this.color = new String(color);
+    }
+
     /*------ GETTERS and SETTERS ---*/
 
     public String getColor()

@@ -11,6 +11,11 @@ public class Joueur
         this.name = new String(name);
     }
 
+    public Joueur()
+    {
+        this.name = null;
+    }
+
     /*------ GETTERS and SETTERS ---*/
 
     public String getName()
