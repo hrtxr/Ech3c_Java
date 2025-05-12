@@ -19,7 +19,7 @@ public abstract class Piece{
         return cur_pos;
     }
 
-    /* Méthodes */
+    /* Methods */
     public void move(int x, int y) {
         try {
             this.position[0] = x;
@@ -28,7 +28,6 @@ public abstract class Piece{
             System.out.println("Invalid Move");
         }
     }
-
 
     abstract boolean is_validMove() {
         // Implémenter la logique de validation du mouvement
