@@ -30,4 +30,11 @@ Il nous permet de développer aussi des compétances annexes comme l'utilisation
 
 ---
 
-    
+<span style="color:cyan; font-size:3.5vw;"> 
+    UML : 
+</span>
+
+![UML diagram of the project](UML_v1.png)
+
+--- 
+All the java source code of this game are in ``Ech3c_Java``directories. 
