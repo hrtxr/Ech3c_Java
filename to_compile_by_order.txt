@@ -1,0 +1,6 @@
+Joueur
+Couleur
+Piece
+Case
+Echiquier
+Move
