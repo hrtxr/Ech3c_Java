@@ -16,12 +16,12 @@ public class Queen extends Piece {
         return this.color;
     }
 
-    /* Méthodes */
+    /* Methods */
     boolean is_validMove(int position[]) {
-        // Implémenter la logique de validation du mouvement pour le roi
-        // The king can move 1 square in any direction
+        // The queen can move any number of squares in any direction
         int[] cur_pos = this.getPosition();
 
-        // To do
+        return (Math.abs( position[0] - cur_pos[0]) == Math.abs(position[1] - cur_pos[1])) ||        // Diagonal movement 
+        (position[0] - cur_pos[0] == 0 || position[1] - cur_pos[1] == 0);                           // Horizontal or vertical movement
     }
 }
