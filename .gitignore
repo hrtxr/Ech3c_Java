@@ -1,0 +1,5 @@
+## MacOs config file
+.DS_Store
+
+## Java compiled
+*.class
