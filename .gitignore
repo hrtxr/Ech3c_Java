@@ -3,3 +3,6 @@
 
 ## Java compiled
 *.class
+
+## binaries dest directories
+bin/
