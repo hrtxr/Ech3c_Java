@@ -1,29 +1,51 @@
-public class Case {
-    private String couleur_case;
-    private Piece piece;
+/* This piece of code has been written by JMLMath */
 
-    public Case(String couleur_case) {
-        this.couleur_case = couleur_case;
-        this.piece = null;
+public class Case
+{
+    private String case_color;
+    private Piece piece_on_it = null;
+
+    /*----- CONSTRUCTORS -----*/
+
+    public Case()
+    {
+        this.case_color = "White";
     }
 
-    public boolean isFree() {
-        return piece == null;
+    public Case(String case_color)
+    {
+        this.case_color = new String(case_color);
     }
 
-    public Piece getPiece() {
-        return piece;
+    public Case(String case_color, Piece piece_on_it)
+    {
+        this(case_color);
+        this.piece_on_it = new Piece(piece_on_it);
     }
 
-    public String getCouleurCase() {
-        return couleur_case;
+    public Case(Piece piece_on_it)
+    {
+        this.piece_on_it = new Piece(piece_on_it);
     }
 
-    public void setCouleurCase(String couleur_case) {
-        this.couleur_case = couleur_case;
+    /*------ GETTERS and SETTERS ---*/
+
+    public String getCaseColor()
+    {
+        return new String(this.case_color);
     }
 
-    public void setPiece(Piece piece) {
-        this.piece = piece;
+    public Piece getPieceOnIt()
+    {
+        return new Piece(piece_on_it);
     }
+
+    public void setPieceOnIt(Piece piece_on_it)
+    {
+        this.piece_on_it = new Piece(piece_on_it);
+    }
+
+    // No setCaseColor() here. 
+    // Normally, we cannot change any case color during a game.
+    // En principe, on ne peut pas modifier la couleur d'une case pendant une partie. 
 }
