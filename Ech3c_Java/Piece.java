@@ -1,5 +1,5 @@
 public class Piece extends Case{
-    private int[] position;
+    private int[] position;x
 
     public Piece(int x, int y) {
         super(x,y);
