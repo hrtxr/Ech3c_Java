@@ -20,12 +20,12 @@ public class Case
     public Case(String case_color, Piece piece_on_it)
     {
         this(case_color);
-        this.piece_on_it = new Piece(piece_on_it);
+        this.piece_on_it = piece_on_it; // cannot create a new instance of an abstract object
     }
 
     public Case(Piece piece_on_it)
     {
-        this.piece_on_it = new Piece(piece_on_it);
+        this.piece_on_it = piece_on_it; // cannot create a new instance of an abstract object
     }
 
     /*------ GETTERS and SETTERS ---*/
@@ -37,12 +37,12 @@ public class Case
 
     public Piece getPieceOnIt()
     {
-        return new Piece(piece_on_it);
+        return piece_on_it; // attention ne retourne pas une nouvelle instance !
     }
 
     public void setPieceOnIt(Piece piece_on_it)
     {
-        this.piece_on_it = new Piece(piece_on_it);
+        this.piece_on_it = piece_on_it; // cannot create a new instance of an abstract object
     }
 
     // No setCaseColor() here. 
