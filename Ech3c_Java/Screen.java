@@ -29,7 +29,6 @@ public class Screen {
         return this.pos;
     }
 
-
     /* Methods */
     public void actualise() {
         this.askuser();
@@ -37,7 +36,7 @@ public class Screen {
 
     private int[] askuser(){
         System.out.println("Au tour de : " + Game.getCurrentPlayer());
-        System.out.println("Séléctionnez votre destination (ex: 1,2) : ");
+        System.out.println("Séléctionnez votre destination (ex: 1 2) : ");
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         String[] pos = input.split(" ");

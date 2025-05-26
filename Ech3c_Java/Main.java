@@ -1,3 +1,6 @@
+// Created by: Romain HEURTAUX
+// Date: 2025-05-26
+
 public class Main {
     public static void main(String[] args) {
         // Initialize the game
@@ -9,6 +12,11 @@ public class Main {
         while (true) {
             System.out.println("Current player: " + game.getCurrentPlayer());
             screen.actualise();
+            if (game.getCurrentPlayer() == "White"){
+                game.setCurrentPlayer("Black");
+            } else {
+                game.setCurrentPlayer("White");
+            }
         }
     }
 }
