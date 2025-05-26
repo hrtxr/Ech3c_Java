@@ -8,7 +8,7 @@ public class Bishop extends Piece {
     
     /* Setter & getter */
     public Bishop(int x, int y, String color) {
-        super(x, y);
+        super(x, y, "B");
         this.color = color;
     }
 

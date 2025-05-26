@@ -8,7 +8,7 @@ public class Rook extends Piece {
     
     /* Setter & getter */
     public Rook(int x, int y, String color) {
-        super(x, y);
+        super(x, y, "R");
         this.color = color;
     }
 
