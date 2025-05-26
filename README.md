@@ -15,7 +15,7 @@ Il nous permet de développer aussi des compétances annexes comme l'utilisation
 All the java source code of this game are in ``Ech3c_Java``directories. 
 
 Here's the current UML diagram that we're using : 
-![UML diagram of the project](UML_v1.png)
+![UML diagram of the project](UML_v2.png)
 
 
 <span style="color:purple; font-size:7vw;">

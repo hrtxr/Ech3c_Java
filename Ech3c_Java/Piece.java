@@ -5,18 +5,24 @@ public abstract class Piece{
     
     /* Variables */
     private int[] position;
+    private String letter;
 
     /* Setter & getter */
-    public Piece(int x, int y) {
+    public Piece(int x, int y, String letter) {
         this.position = new int[2];
         this.position[0] = x;
         this.position[1] = y;
+        this.letter = letter;
     }
     public int[] getPosition() {
         int[] cur_pos = new int[2];
         cur_pos[0] = this.position[0];
         cur_pos[1] = this.position[1];
         return cur_pos;
+    }
+
+    public String getLetter() {
+        return this.letter;
     }
 
     /* Methods */
