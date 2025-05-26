@@ -4,3 +4,12 @@ Piece
 Case
 Echiquier
 Move
+History
+King
+Rook
+Queen
+Bishop
+Knight
+Pawn
+Partie
+Screen
