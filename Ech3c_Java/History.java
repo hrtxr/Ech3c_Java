@@ -1,5 +1,7 @@
 /* This piece of code has been written by JMLMath */
 
+import java.util.ArrayList;
+
 public class History
 {
     private ArrayList<Move> PosList;
@@ -67,7 +69,7 @@ public class History
 
     public void addToHistory(Piece piece, int x, int y)
     {
-        int[] new_pos = new int[2] = {x, y};
+        int[] new_pos = {x, y};
         Move to_add_move = new Move(current_round, new_pos, piece);
 
         PosList.add(to_add_move);

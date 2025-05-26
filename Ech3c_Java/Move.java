@@ -74,6 +74,7 @@ public class Move
     public String toString()
     {
         String move_str = "Move n" + this.round_nb + "Piece.name to (" + this.getNewPositionX() + "," + this.getNewPositionY() + ")";
+        return move_str;
     }
 
 }
