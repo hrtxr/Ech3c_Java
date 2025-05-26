@@ -8,7 +8,7 @@ public class Queen extends Piece {
     
     /* Setter & getter */
     public Queen(int x, int y, String color) {
-        super(x, y);
+        super(x, y, "Q");
         this.color = color;
     }
 

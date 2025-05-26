@@ -8,7 +8,7 @@ public class Knight extends Piece {
     
     /* Setter & getter */
     public Knight(int x, int y, String color) {
-        super(x, y);
+        super(x, y, "k");
         this.color = color;
     }
 

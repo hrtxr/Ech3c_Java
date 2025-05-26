@@ -4,7 +4,7 @@ public class King extends Piece {
     
     /* Setter & getter */
     public King(int x, int y, String color) {
-        super(x, y);
+        super(x, y, "K");
         this.color = color;
     }
 

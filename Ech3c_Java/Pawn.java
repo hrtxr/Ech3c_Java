@@ -8,7 +8,7 @@ public class Pawn extends Piece {
     
     /* Setter & getter */
     public Pawn(int x, int y, String color) {
-        super(x, y);
+        super(x, y, "P");
         this.color = color;
     }
 
