@@ -31,6 +31,7 @@ public class Screen {
 
     /* Methods */
     public void actualise() {
+        this.printHistory();
         this.askuser();
     }
 
@@ -47,5 +48,19 @@ public class Screen {
         pos1[0] = x;
         pos1[1] = y;
         return pos1;
+    }
+
+    private void printHistory()
+    {
+        /* Print in a beautiful way the current game history on stdout */ 
+        
+        Move[] latest_moves = this.Game.getLast();
+
+        System.out.println("+---   History   ------");
+        for(int i = 0; i < latest_moves.length; i++)
+        {
+            System.out.println("| " + latest_moves[i].toString());
+        }
+        System.out.println("+----------------------");
     }
 }
