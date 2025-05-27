@@ -14,7 +14,7 @@ public class Screen {
     }
 
     public Screen() {
-        this.Game = new Partie();
+        this.Game = new Partie("White");    // by default, on a new game White starts
     }
 
     /* Setter & getter */
