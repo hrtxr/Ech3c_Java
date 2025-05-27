@@ -21,6 +21,7 @@ public class Move
             this.new_position[i] = new_position[i];
         }
 
+        this.round_nb = round_nb;
         this.piece_letter = null;
     }
 
@@ -73,7 +74,7 @@ public class Move
 
     public String toString()
     {
-        String move_str = "Move n" + this.round_nb + "Piece.name to (" + this.getNewPositionX() + "," + this.getNewPositionY() + ")";
+        String move_str = "Move " + this.round_nb + " : " + piece_letter + " to (" + this.getNewPositionX() + "," + this.getNewPositionY() + ")";
         return move_str;
     }
 

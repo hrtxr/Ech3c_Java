@@ -31,9 +31,11 @@ public class History
 
         latest_moves = new Move[nb_latest_moves];
 
-        for(int i = history_size - 1; i > history_size - nb_latest_moves; i--)
+        int j = 0;
+        for(int i = history_size - 1; i >= history_size - nb_latest_moves; i--)
         {
-            latest_moves[i] = new Move(PosList.get(i));
+            latest_moves[j] = new Move(this.PosList.get(i));
+            j++;
         }
         
         return latest_moves;
@@ -52,9 +54,11 @@ public class History
 
         latest_moves = new Move[nb_latest_moves];
 
-        for(int i = history_size - 1; i > history_size - nb_latest_moves; i--)
+        int j = 0;
+        for(int i = history_size - 1; i >= history_size - nb_latest_moves; i--)
         {
-            latest_moves[i] = new Move(PosList.get(i));
+            latest_moves[j] = new Move(this.PosList.get(i));
+            j++;
         }
         
         return latest_moves;
@@ -70,9 +74,9 @@ public class History
     public void addToHistory(Piece piece, int x, int y)
     {
         int[] new_pos = {x, y};
-        Move to_add_move = new Move(current_round, new_pos, piece);
+        Move to_add_move = new Move(this.current_round, new_pos, piece);
 
-        PosList.add(to_add_move);
-        current_round++;
+        this.PosList.add(to_add_move);
+        this.current_round++;
     }
 }
