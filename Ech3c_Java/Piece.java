@@ -36,5 +36,4 @@ public abstract class Piece{
     }
 
     abstract boolean is_validMove(int position[]);
-        // Implémenter la logique de validation du mouvement
 }
