@@ -42,4 +42,3 @@ public abstract class Piece{
     {
         return this.letter; // utiliser la toString plutot que getLetter car on pourra modifier ca plus tard
     }
-}
