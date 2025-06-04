@@ -31,6 +31,7 @@ public class Screen {
 
     /* Methods */
     public void actualise() {
+        System.out.println(this.Game.toStringChessboard());
         this.printHistory();
         this.askuser();
     }
