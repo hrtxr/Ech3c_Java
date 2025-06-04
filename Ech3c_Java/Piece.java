@@ -40,5 +40,7 @@ public abstract class Piece{
 
     public String toString()
     {
-        return this.letter; // utiliser la toString plutot que getLetter car on pourra modifier ca plus tard
-    }
+            return this.letter; // utiliser la toString plutot que getLetter car on pourra modifier ca plus tard
+        }
+    
+}

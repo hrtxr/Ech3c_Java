@@ -1,22 +1,14 @@
 public class Echiquier {
     private Case[][] Plateau;
 
-    public Echiquier() {
-        Plateau = new Case[8][8];
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                Plateau[i][j] = new Case(null); // Empty cases
-            }
-        }
-    }
-
     public Echiquier()
     {
-        for(int i = 0; i < Plateau.length; i++)
+        this.Plateau = new Case[8][8];
+        for(int i = 0; i < this.Plateau.length; i++)
         {
-            for(int j = 0; j < Plateau[i].length; j++)
+            for(int j = 0; j < this.Plateau[i].length; j++)
             {
-                Plateau[i][j] = new Case();
+                this.Plateau[i][j] = new Case();    // Empty cases
             }
         }
     }
