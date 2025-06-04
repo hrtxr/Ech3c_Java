@@ -14,4 +14,9 @@ public class Partie extends History {
     public void setCurrentPlayer(String current_player) {
         this.current_player = current_player;
     }
+
+    public String toStringChessboard()
+    {
+        return this.chessboard.toString();
+    }
 }

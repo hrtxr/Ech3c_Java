@@ -48,4 +48,15 @@ public class Case
     // No setCaseColor() here. 
     // Normally, we cannot change any case color during a game.
     // En principe, on ne peut pas modifier la couleur d'une case pendant une partie. 
+
+    /*---------- Other Methods -----*/
+
+    public String toString()
+    {
+        if(this.piece_on_it == null)
+        {
+            return "•";
+        }
+        return this.piece_on_it.toString();
+    }
 }

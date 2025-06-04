@@ -37,4 +37,9 @@ public abstract class Piece{
 
     abstract boolean is_validMove(int position[]);
         // Implémenter la logique de validation du mouvement
+
+    public String toString()
+    {
+        return this.letter; // utiliser la toString plutot que getLetter car on pourra modifier ca plus tard
+    }
 }

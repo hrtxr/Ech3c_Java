@@ -24,6 +24,7 @@ public class Main {
                 Game = false;
             }*/
 
+           System.out.println(game.toStringChessboard());
             // -> Changer de joueur
             if (game.getCurrentPlayer() == "White"){
                 game.setCurrentPlayer("Black");
