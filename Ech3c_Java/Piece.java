@@ -7,6 +7,7 @@ public abstract class Piece{
     private int[] position;
     private String letter;
     private String color;
+    private String color_escape_seq;
 
     /* Setter & getter */
     public Piece(int x, int y, String letter) {
@@ -15,11 +16,13 @@ public abstract class Piece{
         this.position[1] = y;
         this.letter = letter;
         this.color = "White";
+        this.addColorEscapeSeq();
     }
 
     public Piece(int x, int y, String letter, String color) {
         this(x, y, letter);
         this.color = color;
+        this.addColorEscapeSeq();
     }
 
     public int[] getPosition() {
@@ -52,7 +55,15 @@ public abstract class Piece{
 
     public String toString()
     {
-            return this.letter; // utiliser la toString plutot que getLetter car on pourra modifier ca plus tard
-        }
+            return this.color_escape_seq + this.letter + "\033[1;0m";
+            //                                                 ^^^^ -> the default terminal color
+            // utiliser la toString plutot que getLetter car on pourra modifier ca plus tard
+    }
+
+    /* edit this.color_escape_seq attribute if function of this piece's color */
+    private void addColorEscapeSeq()
+    {
+        this.color_escape_seq = this.color == "Black" ? "\033[1;32m" : "\033[1;37m";
+    }
     
 }
