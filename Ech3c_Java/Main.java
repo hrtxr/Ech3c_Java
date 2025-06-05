@@ -13,7 +13,7 @@ public class Main {
         while (Game) {
             // -> Afficher l'état du jeu (grille avec les pièces)
             // -> Demander à l'utilisateur de sélectionner une pièce
-            int[][] uer_move;
+            int[][] user_move;
             user_move = screen.actualise();
             // -> Demander à l'utilisateur de sélectionner une destination
             screen.actualise();
