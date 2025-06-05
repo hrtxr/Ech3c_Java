@@ -58,5 +58,9 @@ public class Partie extends History {
             pieceToMove.move(endX, endY);                   // Mettre à jour la position de la pièce
         }
 
+        // Ajout à l'historique (JMLMatheo)
+
+        this.addToHistory(pieceToMove, endX, endY);
+
     }
 }
