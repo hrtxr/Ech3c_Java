@@ -17,10 +17,11 @@ public class Rook extends Piece {
     }
 
     /* Methods */
-    boolean is_validMove(int position[]) {
+    boolean is_validMove(int position[], Echiquier chessboard) {
         // The rook can move any number of squares horizontally or vertically
         int[] cur_pos = this.getPosition();
 
-        return Math.abs(position[0]) >= 1 || (Math.abs(position[1]) == 1);  
+        return (position[0] - cur_pos[0] == 0) ^ (position[1] - cur_pos[1] == 0); 
+        //                                  ^ = xor 
     }
 }

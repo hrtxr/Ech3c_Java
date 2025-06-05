@@ -17,7 +17,7 @@ public class Knight extends Piece {
     }
 
     /* Methods */
-    boolean is_validMove(int position[]) {
+    boolean is_validMove(int position[], Echiquier chessboard) {
         // The rook can move any number of squares horizontally or vertically
         int[] cur_pos = this.getPosition();
 

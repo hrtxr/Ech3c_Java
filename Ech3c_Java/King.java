@@ -13,7 +13,7 @@ public class King extends Piece {
     }
 
     /* Methods */
-    boolean is_validMove(int position[]) {
+    boolean is_validMove(int position[], Echiquier chessboard) {
         // The king can move 1 square in any direction
         int[] cur_pos = this.getPosition();
         

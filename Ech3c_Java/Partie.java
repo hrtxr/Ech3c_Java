@@ -41,7 +41,7 @@ public class Partie extends History {
 
         // Isvalidmove
          int[] endPosition = {endX, endY};
-        if (!pieceToMove.is_validMove(endPosition)) {
+        if (!pieceToMove.is_validMove(endPosition, chessboard)) {
             System.out.println("Mouvement invalide pour cette pièce.");
             return;
         }
@@ -59,7 +59,6 @@ public class Partie extends History {
         }
 
         // Ajout à l'historique (JMLMatheo)
-
         this.addToHistory(pieceToMove, endX, endY);
 
     }
