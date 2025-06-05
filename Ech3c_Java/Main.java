@@ -12,10 +12,11 @@ public class Main {
         // Start the game loop
         while (Game) {
             // -> Afficher l'état du jeu (grille avec les pièces)
-
             // -> Demander à l'utilisateur de sélectionner une pièce
-            screen.actualise();
             // -> Demander à l'utilisateur de sélectionner une destination
+            screen.actualise();
+
+            
             // -> Vérifier si la position demandée est valide et gérer les erreurs
             // -> Changer la position de la pièce sélectionnée & supprimer la pièce déjà en place si nécessaire
 

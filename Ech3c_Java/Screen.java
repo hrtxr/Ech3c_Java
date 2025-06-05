@@ -30,15 +30,22 @@ public class Screen {
     }
 
     /* Methods */
-    public void actualise() {
+    public int[][] actualise() {
         System.out.println(this.Game.toStringChessboard());
         this.printHistory();
-        this.askuser();
+        int[][] selectedPositions = new int[2][2];
+        selectedPositions[0] = this.askuser(true); 
+        selectedPositions[1] = this.askuser(false); 
+        return selectedPositions;
     }
 
-    private int[] askuser(){
-        System.out.println("Au tour de : " + Game.getCurrentPlayer());
-        System.out.println("Séléctionnez votre destination (ex: 1 2) : ");
+    private int[] askuser(Boolean tour){
+        if(tour){
+            System.out.println("Au tour de : " + Game.getCurrentPlayer());
+            System.out.println("Séléctionnez votre Pion (ex: 1 2) : ");
+        } else {
+            System.out.println("Séléctionnez votre destination (ex: 1 2) : ");
+        }
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         String[] pos = input.split(" ");
