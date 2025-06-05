@@ -41,7 +41,7 @@ public class Partie extends History {
 
         // Isvalidmove
          int[] endPosition = {endX, endY};
-        if (!pieceToMove.is_validMove(endPosition, chessboard)) {
+        if (!pieceToMove.is_validMove(endPosition, chessboard, getCurrentPlayer())) {
             System.out.println("Mouvement invalide pour cette pièce.");
             return;
         }

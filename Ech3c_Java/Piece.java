@@ -50,20 +50,18 @@ public abstract class Piece{
         }
     }
 
-    abstract boolean is_validMove(int position[], Echiquier chessboard);
+    abstract boolean is_validMove(int position[], Echiquier chessboard, String playerColor);
         // Implémenter la logique de validation du mouvement
 
-    public String toString()
-    {
+    public String toString(){
             return this.color_escape_seq + this.letter + "\033[1;0m";
             //                                                 ^^^^ -> the default terminal color
             // utiliser la toString plutot que getLetter car on pourra modifier ca plus tard
-    }
+        }
 
-    /* edit this.color_escape_seq attribute if function of this piece's color */
-    private void addColorEscapeSeq()
-    {
-        this.color_escape_seq = this.color == "Black" ? "\033[1;32m" : "\033[1;37m";
-    }
+        /* edit this.color_escape_seq attribute if function of this piece's color */
+        private void addColorEscapeSeq(){
+            this.color_escape_seq = this.color == "Black" ? "\033[1;32m" : "\033[1;37m";
+        }
     
 }

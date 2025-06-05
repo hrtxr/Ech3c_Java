@@ -11,7 +11,12 @@ public class Knight extends Piece {
     }
 
     /* Methods */
-    boolean is_validMove(int position[], Echiquier chessboard) {
+    boolean is_validMove(int position[], Echiquier chessboard, String playerColor) {
+        // Vérifie que la couleur de la pièce correspond à celle du joueur
+        if (!this.getCouleur().equals(playerColor)) {
+            return false; // La pièce ne peut pas être bougée par ce joueur
+        }
+        
         // The rook can move any number of squares horizontally or vertically
         int[] cur_pos = this.getPosition();
 
