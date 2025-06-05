@@ -50,7 +50,7 @@ public abstract class Piece{
         }
     }
 
-    abstract boolean is_validMove(int position[]);
+    abstract boolean is_validMove(int position[], Echiquier chessboard);
         // Implémenter la logique de validation du mouvement
 
     public String toString()

@@ -11,7 +11,7 @@ public class Queen extends Piece {
     }
 
     /* Methods */
-    boolean is_validMove(int position[]) {
+    boolean is_validMove(int position[], Echiquier chessboard) {
         // The queen can move any number of squares in any direction
         int[] cur_pos = this.getPosition();
 
