@@ -4,16 +4,10 @@
 public class Rook extends Piece {
     
     /* Variables */
-    private String color;
     
     /* Setter & getter */
     public Rook(int x, int y, String color) {
-        super(x, y, "R");
-        this.color = color;
-    }
-
-    public String getCouleur() {
-        return this.color;
+        super(x, y, "R", color);
     }
 
     /* Methods */

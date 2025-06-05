@@ -4,16 +4,10 @@
 public class Knight extends Piece {
     
     /* Variables */
-    private String color;
     
     /* Setter & getter */
     public Knight(int x, int y, String color) {
-        super(x, y, "k");
-        this.color = color;
-    }
-
-    public String getCouleur() {
-        return this.color;
+        super(x, y, "k", color);
     }
 
     /* Methods */

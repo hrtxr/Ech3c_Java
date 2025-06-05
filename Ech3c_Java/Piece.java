@@ -6,6 +6,7 @@ public abstract class Piece{
     /* Variables */
     private int[] position;
     private String letter;
+    private String color;
 
     /* Setter & getter */
     public Piece(int x, int y, String letter) {
@@ -13,7 +14,14 @@ public abstract class Piece{
         this.position[0] = x;
         this.position[1] = y;
         this.letter = letter;
+        this.color = "White";
     }
+
+    public Piece(int x, int y, String letter, String color) {
+        this(x, y, letter);
+        this.color = color;
+    }
+
     public int[] getPosition() {
         int[] cur_pos = new int[2];
         cur_pos[0] = this.position[0];
@@ -23,6 +31,10 @@ public abstract class Piece{
 
     public String getLetter() {
         return this.letter;
+    }
+
+    public String getCouleur() {
+        return this.color;
     }
 
     /* Methods */

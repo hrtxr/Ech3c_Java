@@ -1,15 +1,9 @@
 public class King extends Piece {
 
-    private String color;
     
     /* Setter & getter */
     public King(int x, int y, String color) {
-        super(x, y, "K");
-        this.color = color;
-    }
-
-    public String getCouleur() {
-        return this.color;
+        super(x, y, "K", color);
     }
 
     /* Methods */

@@ -4,16 +4,10 @@
 public class Pawn extends Piece {
 
     /* Variables */
-    private String color;
     
     /* Setter & getter */
     public Pawn(int x, int y, String color) {
-        super(x, y, "P");
-        this.color = color;
-    }
-
-    public String getCouleur() {
-        return this.color;
+        super(x, y, "P", color);
     }
 
     /* Methods */

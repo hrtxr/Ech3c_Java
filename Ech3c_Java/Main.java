@@ -16,7 +16,6 @@ public class Main {
             int[][] user_move;
             user_move = screen.actualise();
             // -> Demander à l'utilisateur de sélectionner une destination
-            screen.actualise();
 
             
             // -> Vérifier si la position demandée est valide et gérer les erreurs
