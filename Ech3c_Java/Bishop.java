@@ -20,22 +20,9 @@ public class Bishop extends Piece {
             return false;
         }
 
-        // Determine direction
-        int xDirection;
-        if ((position[0] - cur_pos[0]) > 0) {xDirection = 1;} else { xDirection = -1;}
-        int yDirection;
-        if ((position[1] - cur_pos[1]) > 0) { yDirection = 1; } else { yDirection = -1; }
-
-        // Check each square along the path for obstacles
-        int x = cur_pos[0]+xDirection;
-        int y = cur_pos[1]+yDirection;
-        System.out.println(" x: " + x + " y: " + y);
-        while (x != position[0] && y != position[1]) {
-            if (chessboard.getPiece(x, y) != null) {
-                return false; 
-            }
-            x += xDirection;
-            y += yDirection;
+        if(this.is_piece_on_diagonal_path(position, chessboard))
+        {
+            return false;
         }
 
         return true; // The path is clear and the move is valid

@@ -65,5 +65,36 @@ public abstract class Piece{
     {
         this.color_escape_seq = this.color == "Black" ? "\033[1;32m" : "\033[1;37m";
     }
+
+    /*  Determine s'il y a une piece sur le déplacement en diagonal. 
+        Copié collé du code de Romain Heurtaux (depuis une autre classe du programme).
+        Args :
+            int position[]  : array of 2 integers what contains the move that we want to check
+            Echiquier chessboard : instance of the current chessboard
+        Returns :
+            boolean : true if there is a piece on path, if not, false
+    */ 
+    public boolean is_piece_on_diagonal_path(int position[], Echiquier chessboard)
+    {
+        int[] cur_pos = this.getPosition();
+
+        // Determine direction
+        int xDirection;
+        if ((position[0] - cur_pos[0]) > 0) {xDirection = 1;} else { xDirection = -1;}
+        int yDirection;
+        if ((position[1] - cur_pos[1]) > 0) { yDirection = 1; } else { yDirection = -1; }
+
+        // Check each square along the path for obstacles
+        int x = cur_pos[0]+xDirection;
+        int y = cur_pos[1]+yDirection;
+        while (x != position[0] && y != position[1]) {
+            if (chessboard.getPiece(x, y) != null) {
+                return true; 
+            }
+            x += xDirection;
+            y += yDirection;
+        }
+        return false;
+    }
     
 }
