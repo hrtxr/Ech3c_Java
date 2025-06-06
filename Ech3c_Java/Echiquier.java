@@ -26,14 +26,25 @@ public class Echiquier {
     public String toString()
     {
         String chessboard_str = new String();
+        String[] line_letters = {"A", "B", "C", "D", "E", "F", "G", "H"};
+
         for(int i = 0; i < Plateau.length; i++)
         {
+            chessboard_str = chessboard_str.concat(line_letters[i]);
+            chessboard_str = chessboard_str.concat("  ");
             for(int j = 0; j < Plateau[i].length; j++)
             {
                 chessboard_str = chessboard_str.concat(this.Plateau[i][j].toString());
                 chessboard_str = chessboard_str.concat(" ");
             }
             chessboard_str = chessboard_str.concat("\n");
+        }
+
+        chessboard_str = chessboard_str.concat("   ");
+        for(int i = 1; i < 8 + 1; i++)
+        {
+            chessboard_str = chessboard_str.concat(Integer.toString(i));
+            chessboard_str = chessboard_str.concat(" ");
         }
 
         return chessboard_str;
@@ -134,5 +145,42 @@ public class Echiquier {
         x = 7;
         current_king = new King(x, y, "White");
         this.Plateau[x][y].setPieceOnIt(current_king);
+    }
+
+    /* Return the index on the matrix of the string coordinates.
+    For example :   "B8" -> (0, 1)
+                    "D6" -> (2, 3)
+    */
+    public static int[] coord_str_to_int(String coordinates) throws IllegalArgumentException
+    {
+        if(coordinates.length() > 2)  // vérification des entrées
+        {
+            throw new IllegalArgumentException("La chaine de caractère est trop longue");
+        }
+
+        char[] letters_array = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'};
+        char letter = coordinates.charAt(0);
+        char number_str = coordinates.charAt(1);
+        int number_int = Character.getNumericValue(number_str); // we use Character object methods
+        int[] matrix_coord = new int[2];                        // documentation here : https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html
+        boolean searching_letter = true;
+        int i;
+
+        letter = Character.toUpperCase(letter);     // just for sure
+
+        matrix_coord[1] = number_int - 1;   // y coord
+
+        i = 0;
+        while(i < letters_array.length && searching_letter) // searching maching letter's index for the x coord
+        {
+            if(letters_array[i] == letter)
+            {
+                matrix_coord[0] = i;
+                searching_letter = false;
+            }
+            i++;
+        }
+
+        return matrix_coord;
     }
 }

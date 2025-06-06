@@ -48,13 +48,13 @@ public class Screen {
         }
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
+        /* Ancienne version (au cas ou)
         String[] pos = input.split(" ");
         int x = Integer.parseInt(pos[0]);
         int y = Integer.parseInt(pos[1]);
-        System.out.println("Vous avez choisi la position : " + x + "-" + y);
-        int[] pos1 = new int[2];
-        pos1[0] = x;
-        pos1[1] = y;
+        */
+        int[] pos1 = Echiquier.coord_str_to_int(input);
+        System.out.println("Vous avez choisi la position : " + input);
         return pos1;
     }
 
