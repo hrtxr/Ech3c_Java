@@ -10,6 +10,10 @@ Ce projet nous a été initié par l'IUT de Villetanneuse dans le cadre de nos �
 Il s'agit d'un travail de groupe ayant pour but de confectionner et de créer un jeu d'échec en Java afin de développer nos compétances dans ce domaine.
 Il nous permet de développer aussi des compétances annexes comme l'utilisation d'outils tels que github ou VSCode.
 
+Voici un extrait de jeu :
+![Image d'un extrait de jeu dans le terminal](game_extract1.png)
+*<small>selon la v0.0.1-beta</small>*
+
 ## Directories organisation
 
 All the java source code of this game are in ``Ech3c_Java``directories. 
