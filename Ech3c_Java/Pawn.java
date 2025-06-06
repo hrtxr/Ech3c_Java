@@ -4,22 +4,80 @@
 public class Pawn extends Piece {
 
     /* Variables */
-    
-    
+
+
     /* Setter & getter */
     public Pawn(int x, int y, String color) {
         super(x, y, "P", color);
     }
 
     /* Methods */
-    boolean is_validMove(int position[], Echiquier chessboard) {
-        // The pawn can move one square forward, or two squares forward from its starting position
+    boolean is_validMove(int position[], Echiquier chessboard, String playerColor) {
+        // Vérifie que la couleur de la pièce correspond à celle du joueur
+        if (!this.getCouleur().equals(playerColor)) {
+            return false; // La pièce ne peut pas être bougée par ce joueur
+        }
+
         int[] cur_pos = this.getPosition();
+        if (this.getCouleur().equals("Black")) {
+            // mouvement vers le bas
+            if (cur_pos[1] == 0) { // Si le pion est tout à gauche
+                if (position[0] == cur_pos[0] + 1 && position[1] == cur_pos[1] + 1 &&
+                    chessboard.getPiece(position[0], position[1]) != null &&
+                    !chessboard.getPiece(position[0], position[1]).getCouleur().equals("Black")) {
+                    return true; // Capture diagonale
+                }
+            } else if (cur_pos[1] == 7) { // Si le pion est tout à droite
+                if (position[0] == cur_pos[0] + 1 && position[1] == cur_pos[1] - 1 &&
+                    chessboard.getPiece(position[0], position[1]) != null &&
+                    !chessboard.getPiece(position[0], position[1]).getCouleur().equals("Black")) {
+                    return true; // Capture diagonale
+                }
+            } else {
+                if ((position[0] == cur_pos[0] + 1 && position[1] == cur_pos[1] + 1 ||
+                     position[0] == cur_pos[0] + 1 && position[1] == cur_pos[1] - 1) &&
+                    chessboard.getPiece(position[0], position[1]) != null &&
+                    !chessboard.getPiece(position[0], position[1]).getCouleur().equals("Black")) {
+                    return true; // Capture diagonale
+                }
+            }
 
-        return (
+            // Sinon, le pion avance tout droit
+            if (position[0] == cur_pos[0] + 1 && position[1] == cur_pos[1] &&
+                chessboard.getPiece(position[0], position[1]) == null &&
+                this.getCouleur().equals("Black")) {
+                return true; // Avance tout droit
+            }
+        } else {
+            // mouvement vers le haut
+            if (cur_pos[1] == 0) { // Si le pion est tout à gauche
+                if (position[0] == cur_pos[0] - 1 && position[1] == cur_pos[1] + 1 &&
+                    chessboard.getPiece(position[0], position[1]) != null &&
+                    !chessboard.getPiece(position[0], position[1]).getCouleur().equals("White")) {
+                    return true; // Capture diagonale
+                }
+            } else if (cur_pos[1] == 7) { // Si le pion est tout à droite
+                if (position[0] == cur_pos[0] - 1 && position[1] == cur_pos[1] - 1 &&
+                    chessboard.getPiece(position[0], position[1]) != null &&
+                    !chessboard.getPiece(position[0], position[1]).getCouleur().equals("White")) {
+                    return true; // Capture diagonale
+                }
+            } else {
+                if ((position[0] == cur_pos[0] - 1 && position[1] == cur_pos[1] + 1 ||
+                     position[0] == cur_pos[0] - 1 && position[1] == cur_pos[1] - 1) &&
+                    chessboard.getPiece(position[0], position[1]) != null &&
+                    !chessboard.getPiece(position[0], position[1]).getCouleur().equals("White")) {
+                    return true; // Capture diagonale
+                }
+            }
 
-            (position[0] == cur_pos[0]+1 && position[1] == cur_pos[1] + 1) ||
-            (position[0] == cur_pos[0]+1 && position[1] == cur_pos[1] - 1)
-        );
+            // Sinon, le pion avance tout droit
+            if (position[0] == cur_pos[0] - 1 && position[1] == cur_pos[1] &&
+                chessboard.getPiece(position[0], position[1]) == null &&
+                this.getCouleur().equals("White")) {
+                return true; // Avance tout droit
+            }
+        }
+        return false;
     }
 }
