@@ -96,5 +96,41 @@ public abstract class Piece{
         }
         return false;
     }
+
+    /*  Determine s'il y a une piece sur le déplacement en ligne droite. 
+        Args :
+            int position[]  : array of 2 integers what contains the move that we want to check
+            Echiquier chessboard : instance of the current chessboard
+        Returns :
+            boolean : true if there is a piece on path, if not, false
+    */ 
+    public boolean is_piece_on_straight_path(int position[], Echiquier chessboard) throws Exception
+    {
+        int[] cur_pos = this.getPosition();
+
+        // Determine direction
+        int xDirection;
+        if ((position[0] - cur_pos[0]) > 0) {xDirection = 1;} else { xDirection = -1;}
+        int yDirection;
+        if ((position[1] - cur_pos[1]) > 0) { yDirection = 1; } else { yDirection = -1; }
+
+        if(xDirection != 0 && yDirection != 0)
+        {
+            throw new Exception("Le déplacement n'est pas en ligne droite.");
+        }
+
+        // Check each square along the path for obstacles
+        int x = cur_pos[0]+xDirection;
+        int y = cur_pos[1]+yDirection;
+        while (x != position[0] && y != position[1]) {
+            if (chessboard.getPiece(x, y) != null) {
+                return true; 
+            }
+            x += xDirection;
+            y += yDirection;
+        }
+        return false;
+    }
+    
     
 }

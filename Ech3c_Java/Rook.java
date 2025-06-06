@@ -15,7 +15,22 @@ public class Rook extends Piece {
         // The rook can move any number of squares horizontally or vertically
         int[] cur_pos = this.getPosition();
 
-        return (position[0] - cur_pos[0] == 0) ^ (position[1] - cur_pos[1] == 0); 
-        //                                  ^ = xor 
+        if(!((position[0] - cur_pos[0] == 0) ^ (position[1] - cur_pos[1] == 0)))
+        { 
+            //                              ^ = xor 
+            return false;
+        }
+
+        try {
+            if(this.is_piece_on_straight_path(position, chessboard))
+            {
+                return false;
+            }
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+
+        return true;
     }
 }
