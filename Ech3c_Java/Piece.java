@@ -59,6 +59,11 @@ public abstract class Piece{
             // utiliser la toString plutot que getLetter car on pourra modifier ca plus tard
         }
 
+    private void addColorEscapeSeq()
+    {
+        this.color_escape_seq = this.color == "Black" ? "\033[1;32m" : "\033[1;37m";
+    }
+
     /*  Determine s'il y a une piece sur le déplacement en diagonal. 
         Copié collé du code de Romain Heurtaux (depuis une autre classe du programme).
         Args :
