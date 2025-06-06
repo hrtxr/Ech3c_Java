@@ -8,9 +8,9 @@ public class King extends Piece {
 
     /* Methods */
     boolean is_validMove(int position[], Echiquier chessboard, String playerColor) {
-        // Vérifie que la couleur de la pièce correspond à celle du joueur
+        // Veryfiying that piece color is corresponding to the player color
         if (!this.getCouleur().equals(playerColor)) {
-            return false; // La pièce ne peut pas être bougée par ce joueur
+            return false; 
         }
         
         // The king can move 1 square in any direction
@@ -18,12 +18,10 @@ public class King extends Piece {
         
         return Math.abs(position[0]) == 1 || Math.abs(position[1]) == 1; 
 
-        // Old way
-        //return position[0] <= cur_pos[0] +1 || position[0] >= cur_pos[0] -1 || /* top, bottom */
-        //       position[1] <= cur_pos[1] +1 || position[1] >= cur_pos[1] -1 || /* left, right */
-        //       position[1] <= cur_pos[1] +1 && position[0] <= cur_pos[0] +1 || /* top right */
-        //       position[1] >= cur_pos[1] -1 && position[0] >= cur_pos[0] -1 || /* bottom left */
-        //       position[1] >= cur_pos[1] -1 && position[0] >= cur_pos[0] +1 || /* bottom right */
-        //       position[1] >= cur_pos[1] +1 && position[0] >= cur_pos[0] -1; /* top left */
+        // Check the color of  the destination square
+        Piece destinationPiece = chessboard.getPiece(position[0], position[1]);
+        if (destinationPiece != null && destinationPiece.getCouleur().equals(this.getCouleur())) {
+            return false;
+        }
     }
 }

@@ -12,9 +12,9 @@ public class Knight extends Piece {
 
     /* Methods */
     boolean is_validMove(int position[], Echiquier chessboard, String playerColor) {
-        // Vérifie que la couleur de la pièce correspond à celle du joueur
+        // veryfiying that piece color is corresponding to the player color
         if (!this.getCouleur().equals(playerColor)) {
-            return false; // La pièce ne peut pas être bougée par ce joueur
+            return false; 
         }
         
         // The rook can move any number of squares horizontally or vertically
@@ -33,5 +33,11 @@ public class Knight extends Piece {
             position[0] >= cur_pos[0] -1 && position[1] <= cur_pos[1] -2 ||
             position[0] >= cur_pos[0] -1 && position[1] <= cur_pos[1] +2 
         );
+
+        // Check the color of  the destination square
+        Piece destinationPiece = chessboard.getPiece(position[0], position[1]);
+        if (destinationPiece != null && destinationPiece.getCouleur().equals(this.getCouleur())) {
+            return false;
+        }
     }
 }

@@ -3,8 +3,6 @@
 
 public class Bishop extends Piece {
 
-    /* Variables */
-    
     /* Setter & getter */
     public Bishop(int x, int y, String color) {
         super(x, y, "B", color);
@@ -12,9 +10,9 @@ public class Bishop extends Piece {
 
     /* Methods */
     boolean is_validMove(int position[], Echiquier chessboard, String playerColor) {
-        // Vérifie que la couleur de la pièce correspond à celle du joueur
+        // veryfiying that piece color is corresponding to the player color
         if (!this.getCouleur().equals(playerColor)) {
-            return false; // La pièce ne peut pas être bougée par ce joueur
+            return false; 
         }
         
         // The bishop can move any number of squares diagonally
@@ -34,7 +32,6 @@ public class Bishop extends Piece {
         // Check each square along the path for obstacles
         int x = cur_pos[0]+xDirection;
         int y = cur_pos[1]+yDirection;
-        System.out.println(" x: " + x + " y: " + y);
         while (x != position[0] && y != position[1]) {
             if (chessboard.getPiece(x, y) != null) {
                 return false; 
@@ -43,6 +40,12 @@ public class Bishop extends Piece {
             y += yDirection;
         }
 
-        return true; // The path is clear and the move is valid
+        // Check the color of  the destination square
+        Piece destinationPiece = chessboard.getPiece(position[0], position[1]);
+        if (destinationPiece != null && destinationPiece.getCouleur().equals(this.getCouleur())) {
+            return false;
+        }
+
+        return true; 
     }
 }
