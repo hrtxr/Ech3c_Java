@@ -20,6 +20,16 @@ public class Pawn extends Piece {
 
         int[] cur_pos = this.getPosition();
         if (this.getCouleur().equals("Black")) {
+            
+            // Si l'historique contient 1 ou 2 éléments, le pion peut avancer de deux cases
+            if (chessboard.history.size() <= 2) {
+                if (position[0] == cur_pos[0] + 2 && position[1] == cur_pos[1] &&
+                    chessboard.getPiece(position[0], position[1]) == null &&
+                    chessboard.getPiece(cur_pos[0] + 1, position[1]) == null) {
+                    return true; 
+                }
+            }
+
             // mouvement vers le bas
             if (cur_pos[1] == 0) { // Si le pion est tout à gauche
                 if (position[0] == cur_pos[0] + 1 && position[1] == cur_pos[1] + 1 &&
@@ -49,6 +59,15 @@ public class Pawn extends Piece {
                 return true; // Avance tout droit
             }
         } else {
+            // Si l'historique contient 1 ou 2 éléments, le pion peut avancer de deux cases
+            if (chessboard.history.size() <= 2) {
+                if (position[0] == cur_pos[0] - 2 && position[1] == cur_pos[1] &&
+                    chessboard.getPiece(position[0], position[1]) == null &&
+                    chessboard.getPiece(cur_pos[0] - 1, position[1]) == null) {
+                    return true;
+                }
+            }
+        
             // mouvement vers le haut
             if (cur_pos[1] == 0) { // Si le pion est tout à gauche
                 if (position[0] == cur_pos[0] - 1 && position[1] == cur_pos[1] + 1 &&
