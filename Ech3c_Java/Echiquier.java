@@ -147,6 +147,79 @@ public class Echiquier {
         this.Plateau[x][y].setPieceOnIt(current_king);
     }
 
+    /*  Determine si le roi du joueur passé en argument est en position d'échec.
+        Algorithme :
+            Parcours toute les case de l'échiquier. Si la pièce est de la couleur adverse et qu'elle peut se déplacer jusqu'au Roi
+            (et donc le manger), alors notre Roi est en position d'échec.
+        Args :
+            String player_color :   current player's color
+        Returns :
+            boolean : true if current player's king is in check position
+    */
+    public boolean is_check(String player_color) throws Exception
+    {
+        String adverse_color = player_color == "White" ? "Black" : "White";
+        Piece player_king = null;
+        int[] player_king_position;
+        Piece current_piece;
+        boolean found = false;
+        int i = 0;
+        int j = 0;
+
+        // recherche du Roi du joueur actuel
+        while(i < Plateau.length && !found)
+        {
+            j = 0;
+            while(j < Plateau[i].length && !found)
+            {   
+                current_piece = Plateau[i][j].getPieceOnIt();
+                if(current_piece != null)
+                {
+                    if( current_piece.getLetter().equals("K")    // si la piece est le Roi du joueur actuel
+                        && current_piece.getCouleur() == player_color
+                    ) 
+                    {
+                        player_king = current_piece;    // /!\ pas d'encapsulation ici, c'est pas une nouvelle instance
+                        found = true;
+                    }
+                }
+                j++;
+            }
+            i++;
+        }
+
+        if(player_king != null)
+        {
+            player_king_position = player_king.getPosition();
+        }
+        else
+        {
+            throw new Exception("Le Roi n'a pas été trouvé");   // normalement ne se produit jamais
+        }
+
+        //  recherche si une piece adverse peut atteindre la position du Roi (donc le manger),
+        //  et donc le met en echec
+        for(i = 0; i < Plateau.length; i++)
+        {
+            for(j = 0; j < Plateau[i].length; j++)
+            {
+                current_piece = Plateau[i][j].getPieceOnIt();
+                if(current_piece != null)
+                {
+                    if(current_piece.is_validMove(player_king_position, this, adverse_color)
+                        && current_piece.getCouleur().equals(adverse_color)
+                        && !(current_piece.getLetter().equals("k"))
+                    )
+                    {
+                        // la piece peut manger le Roi. Donc il y a echec.
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
     /* Return the index on the matrix of the string coordinates.
     For example :   "B8" -> (0, 1)
                     "D6" -> (2, 3)

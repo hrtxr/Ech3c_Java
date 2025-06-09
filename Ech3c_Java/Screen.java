@@ -32,6 +32,7 @@ public class Screen {
     /* Methods */
     public int[][] actualise() {
         System.out.println(this.Game.toStringChessboard());
+        this.printCheckMessage();
         this.printHistory();
         int[][] selectedPositions = new int[2][2];
         selectedPositions[0] = this.askuser(true); 
@@ -70,5 +71,15 @@ public class Screen {
             System.out.println("| " + latest_moves[i].toString());
         }
         System.out.println("+----------------------");
+    }
+
+    private void printCheckMessage()
+    {
+        /* Print in a beautiful way a message if the player is in check position */
+
+        if(this.Game.is_check())
+        {
+            System.out.println("Vous etes en position d'echec");
+        }
     }
 }
