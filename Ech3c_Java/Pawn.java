@@ -21,12 +21,12 @@ public class Pawn extends Piece {
         int[] cur_pos = this.getPosition();
         if (this.getCouleur().equals("Black")) {
             
-            // Si l'historique contient 1 ou 2 éléments, le pion peut avancer de deux cases
-            if (chessboard.history.size() <= 2) {
-                if (position[0] == cur_pos[0] + 2 && position[1] == cur_pos[1] &&
+            // Si le pion est à sa position d'origine, il peut avancer de 1 ou 2 cases
+            if (cur_pos[0] == 1) {
+                if ((position[0] == cur_pos[0] + 1 || position[0] == cur_pos[0] + 2) && position[1] == cur_pos[1] &&
                     chessboard.getPiece(position[0], position[1]) == null &&
-                    chessboard.getPiece(cur_pos[0] + 1, position[1]) == null) {
-                    return true; 
+                    (position[0] == cur_pos[0] + 2 ? chessboard.getPiece(cur_pos[0] + 1, position[1]) == null : true)) {
+                    return true;
                 }
             }
 
