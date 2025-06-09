@@ -62,4 +62,16 @@ public class Partie extends History {
         this.addToHistory(pieceToMove, endX, endY);
 
     }
+
+    public boolean is_check()
+    {
+        try
+        {
+            return this.chessboard.is_check(this.current_player);
+        }
+        catch(Exception e)
+        {
+            return false;   // à gérer plus tard
+        }
+    }
 }
