@@ -40,6 +40,16 @@ public class Screen {
         return selectedPositions;
     }
 
+     public void title_screen()
+    {
+        System.out.println("███████╗ ██████╗██╗  ██╗██████╗  ██████╗             ██╗ █████╗ ██╗   ██╗ █████╗ ");
+        System.out.println("██╔════╝██╔════╝██║  ██║╚════██╗██╔════╝             ██║██╔══██╗██║   ██║██╔══██╗");
+        System.out.println("█████╗  ██║     ███████║ █████╔╝██║                  ██║███████║██║   ██║███████║");
+        System.out.println("██╔══╝  ██║     ██╔══██║ ╚═══██╗██║             ██   ██║██╔══██║╚██╗ ██╔╝██╔══██║");
+        System.out.println("███████╗╚██████╗██║  ██║██████╔╝╚██████╗███████╗╚█████╔╝██║  ██║ ╚████╔╝ ██║  ██║");
+        System.out.println("╚══════╝ ╚═════╝╚═╝  ╚═╝╚═════╝  ╚═════╝╚══════╝ ╚════╝ ╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝");
+    }
+
     private int[] askuser(Boolean tour){
         if(tour){
             System.out.println("Au tour de : " + Game.getCurrentPlayer());
