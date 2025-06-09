@@ -12,7 +12,7 @@ Il nous permet de développer aussi des compétances annexes comme l'utilisation
 
 Voici un extrait de jeu :
 ![Image d'un extrait de jeu dans le terminal](game_extract1.png)
-*<small>selon la v0.0.1-beta</small>*
+*<small>selon la v0.0.1</small>*
 
 ## Directories organisation
 
