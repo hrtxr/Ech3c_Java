@@ -54,9 +54,9 @@ public class Screen {
     private int[] askuser(Boolean tour){
         if(tour){
             System.out.println("Au tour de : " + Game.getCurrentPlayer());
-            System.out.println("Séléctionnez votre Pion (ex: 1 2) : ");
+            System.out.println("Séléctionnez votre Pion (ex: A2) : ");
         } else {
-            System.out.println("Séléctionnez votre destination (ex: 1 2) : ");
+            System.out.println("Séléctionnez votre destination (ex: A2) : ");
         }
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();

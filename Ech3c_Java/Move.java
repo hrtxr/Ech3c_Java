@@ -74,7 +74,7 @@ public class Move
 
     public String toString()
     {
-        String move_str = "Move " + this.round_nb + " : " + piece_letter + " to (" + this.getNewPositionX() + "," + this.getNewPositionY() + ")";
+        String move_str = "Move " + this.round_nb + " : " + piece_letter + " to " + Echiquier.coord_int_to_str(this.getNewPosition());
         return move_str;
     }
 

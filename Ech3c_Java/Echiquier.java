@@ -256,4 +256,21 @@ public class Echiquier {
 
         return matrix_coord;
     }
+
+    // Converts matrix coordinates (int[2]) to chess notation (e.g., [0,1] -> "B1")
+    public static String coord_int_to_str(int[] matrix_coord) throws IllegalArgumentException
+    {
+        if(matrix_coord.length != 2)
+        {
+            throw new IllegalArgumentException("Le tableau doit contenir exactement 2 éléments");
+        }
+        char[] letters_array = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'};
+        int x = matrix_coord[0];
+        int y = matrix_coord[1];
+
+        char letter = letters_array[x];
+        int number = y + 1;
+
+        return "" + letter + number;
+    }
 }
