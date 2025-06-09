@@ -40,23 +40,12 @@ public class Screen {
         return selectedPositions;
     }
 
-     public void title_screen()
-    {
-        System.out.println("███████╗ ██████╗██╗  ██╗██████╗  ██████╗             ██╗ █████╗ ██╗   ██╗ █████╗ ");
-        System.out.println("██╔════╝██╔════╝██║  ██║╚════██╗██╔════╝             ██║██╔══██╗██║   ██║██╔══██╗");
-        System.out.println("█████╗  ██║     ███████║ █████╔╝██║                  ██║███████║██║   ██║███████║");
-        System.out.println("██╔══╝  ██║     ██╔══██║ ╚═══██╗██║             ██   ██║██╔══██║╚██╗ ██╔╝██╔══██║");
-        System.out.println("███████╗╚██████╗██║  ██║██████╔╝╚██████╗███████╗╚█████╔╝██║  ██║ ╚████╔╝ ██║  ██║");
-        System.out.println("╚══════╝ ╚═════╝╚═╝  ╚═╝╚═════╝  ╚═════╝╚══════╝ ╚════╝ ╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝");
-        System.out.println("");
-    }
-
     private int[] askuser(Boolean tour){
         if(tour){
             System.out.println("Au tour de : " + Game.getCurrentPlayer());
-            System.out.println("Séléctionnez votre Pion (ex: A2) : ");
+            System.out.println("Séléctionnez votre Pion (ex: 1 2) : ");
         } else {
-            System.out.println("Séléctionnez votre destination (ex: A2) : ");
+            System.out.println("Séléctionnez votre destination (ex: 1 2) : ");
         }
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
