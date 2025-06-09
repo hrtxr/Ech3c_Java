@@ -9,6 +9,7 @@ public class Main {
         Screen screen = new Screen(game);
         Boolean Game = true;
 
+        screen.title_screen();
         // Start the game loop
         while (Game) {
             // -> Afficher l'état du jeu (grille avec les pièces)

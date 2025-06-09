@@ -48,6 +48,7 @@ public class Screen {
         System.out.println("██╔══╝  ██║     ██╔══██║ ╚═══██╗██║             ██   ██║██╔══██║╚██╗ ██╔╝██╔══██║");
         System.out.println("███████╗╚██████╗██║  ██║██████╔╝╚██████╗███████╗╚█████╔╝██║  ██║ ╚████╔╝ ██║  ██║");
         System.out.println("╚══════╝ ╚═════╝╚═╝  ╚═╝╚═════╝  ╚═════╝╚══════╝ ╚════╝ ╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝");
+        System.out.println("");
     }
 
     private int[] askuser(Boolean tour){
